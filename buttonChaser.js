@@ -4,6 +4,7 @@ let availableHeight;
 let timer;
 let iterations = 0;
 
+alert("Welcome,Try to click the Red Square button for increasing your score,Have fun!")
 window.addEventListener('load',setGameAreaBounds);
 function setGameAreaBounds(){
     availableWidth = innerWidth;//get the width of our screen size
@@ -24,6 +25,7 @@ function userScore() {
 }
 
 function moveDot() {
+    
     let leftCoordinate = Math.floor(Math.random()*availableWidth);//random number between 0 to available width
     let topCoordinate = Math.floor(Math.random()*availableHeight);//random number between 0 to available height
     if( leftCoordinate < 10 ){
@@ -37,11 +39,21 @@ function moveDot() {
     //until here we have our square button random coordinate
 
     // 
-     if(iterations < 30) {
-         timer = setTimeout("moveDot()",1000); // make the square button different coordinates for 30 second (it will not finish until it gets the iterations = 30 ) 
+     if(iterations < 10) {
+         timer = setTimeout("moveDot()",1300); // make the square button different coordinates for 30 second (it will not finish until it gets the iterations = 30 ) 
+     }
+     else if(iterations < 20){
+        timer = setTimeout("moveDot()",900);
+     }
+     else if(iterations < 30){
+        timer = setTimeout("moveDot()",700);
+     }
+     else if(iterations < 40){
+        timer = setTimeout("moveDot()",500);
      }
      else{
-         document.querySelector(".scoreLabel").innerHTML += "    Game Over!";
+         
+         document.querySelector(".gameArea").innerHTML += "    Game Over!";
          document.querySelector(".dot").removeEventListener("click",userScore); // when the game is over (for specific time) we want that user  cant click the button for getting score
          clearTimeout(timer);
      }
