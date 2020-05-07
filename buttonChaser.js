@@ -4,6 +4,7 @@ let availableHeight;
 let timer;
 let iterations = 0;
 
+ document.body.style.display = none;
 alert("Welcome,Try to click the Red Square button for increasing your score,Have fun!")
 window.addEventListener('load',setGameAreaBounds);
 function setGameAreaBounds(){
