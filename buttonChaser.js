@@ -4,8 +4,9 @@ let availableHeight;
 let timer;
 let iterations = 0;
 
-alert("Welcome,Try to click the Red Square button for increasing your score,Have fun!")
 
+
+alert("Welcome,Try to click the Red Square button for increasing your score,Have fun!")
 window.addEventListener('load',setGameAreaBounds);
 function setGameAreaBounds(){
     availableWidth = innerWidth;//get the width of our screen size
@@ -53,9 +54,8 @@ function moveDot() {
         timer = setTimeout("moveDot()",500);
      }
      else{
-         document.querySelector(".gameArea").innerHTML += "    Game Over!";
-         document.querySelector(".dot").removeEventListener("click",userScore); // when the game is over (for specific time) we want that user  cant click the button for getting score
-       document.body.style.display = none;   
+      document.querySelector(".gameArea").innerHTML += "    Game Over!";
+      document.querySelector(".dot").removeEventListener("click",userScore); // when the game is over (for specific time) we want that user  cant click the button for getting score  
       clearTimeout(timer);
      }
      iterations++;
