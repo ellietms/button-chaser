@@ -52,7 +52,6 @@ function moveDot() {
         timer = setTimeout("moveDot()",500);
      }
      else{
-        document.querySelector(".dot").style.display = none
          document.querySelector(".gameArea").innerHTML += "    Game Over!";
          document.querySelector(".dot").removeEventListener("click",userScore); // when the game is over (for specific time) we want that user  cant click the button for getting score
          clearTimeout(timer);
